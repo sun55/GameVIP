@@ -21,4 +21,31 @@
         <attr name="roundWidth" format="dimension" />
         <attr name="roundHeight" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="RatingBar">
+        <attr name="starImageSize" format="dimension" />
+        <attr name="starCount" format="integer" />
+        <attr name="starEmpty" format="reference" />
+        <attr name="starFill" format="reference" />
+        <attr name="halfFill" format="reference" />
+        <attr name="clickable" format="boolean" />
+        <attr name="marginRightSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="XIndicator">
+        <attr name="text_color_normal" format="color" />
+        <attr name="text_color_selected" format="color" />
+        <attr name="text_size" format="dimension" />
+        <attr name="indicator_visible_count" format="integer" />
+        <attr name="indicator_color" format="color" />
+        <attr name="indicator_style">
+            <enum name="bitmap" value="0" />
+            <enum name="line" value="1" />
+            <enum name="triangle" value="2" />
+        </attr>
+        <attr name="style_bitmap_src" format="reference" />
+        <attr name="style_line_padding" format="dimension" />
+        <attr name="indicator_height" format="dimension" />
+        <attr name="indicator_width" format="dimension" />
+    </declare-styleable>
 </resources>
