@@ -214,10 +214,12 @@ public class XIndicator extends LinearLayout {
                 /**
                  * 方形/图标指示器:宽,高与item相等
                  */
-                mIndicatorWidth = mIndicatorWidth < 0 ? w / mTabVisibleCount : mIndicatorWidth;
+                mIndicatorWidth = mIndicatorWidth < 0 ? (w / mTabVisibleCount) - (mStyleLinePadding * 2) : mIndicatorWidth;
+//                mIndicatorWidth = mIndicatorWidth < 0 ? w / mTabVisibleCount : mIndicatorWidth;
                 mIndicatorHeight = mIndicatorHeight < 0 ? h : mIndicatorHeight;
                 mTranslationX = 0;
-                mRectF = new Rect(0, 0, mIndicatorWidth, mIndicatorHeight);
+//                mRectF = new Rect(0, 0, mIndicatorWidth, mIndicatorHeight);
+                mRectF = new Rect(mStyleLinePadding, 0, mIndicatorWidth + mStyleLinePadding, mIndicatorHeight);
                 break;
             case STYLE_TRIANGLE:
                 /**

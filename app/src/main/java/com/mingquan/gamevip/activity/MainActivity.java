@@ -1,8 +1,10 @@
 package com.mingquan.gamevip.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +17,7 @@ import com.mingquan.gamevip.fragment.HomeFragment;
 import com.mingquan.gamevip.fragment.MessageFragment;
 import com.mingquan.gamevip.fragment.OpenServiceFragment;
 import com.mingquan.gamevip.fragment.SocietyFragment;
+import com.mingquan.gamevip.utils.TDevice;
 import com.mingquan.gamevip.widget.MyRatingBar;
 import com.mingquan.gamevip.widget.RoundAngleImageView;
 import com.mingquan.gamevip.widget.StatusTextView;
@@ -50,8 +53,6 @@ public class MainActivity extends BaseActivity {
 
     @BindView(R.id.view_pager)
     ViewPager viewPager;
-    @BindView(R.id.scrollable_layout)
-    HeaderViewPager scrollableLayout;
 
     private List<Fragment> mFragments;
     private HomeFragment homeFragment;
@@ -74,6 +75,8 @@ public class MainActivity extends BaseActivity {
         String[] tabTitles = getResources().getStringArray(R.array.tab_titles);
         indicator.setTitleList(Arrays.asList(tabTitles));
         indicator.setViewPager(viewPager, 0);
+        float padding = (TDevice.getScreenWidth() - TDevice.dpToPixel(210)) / 10;
+        indicator.setStyleLinePadding((int) TDevice.pixelsToDp(padding));
         homeFragment = HomeFragment.getInstance();
         gameFragment = GameFragment.getInstance();
         openServiceFragment = OpenServiceFragment.getInstance();
@@ -88,20 +91,14 @@ public class MainActivity extends BaseActivity {
             mFragments.add(messageFragment);
         }
         viewPager.setAdapter(new FragmentViewPagerAdapter(getSupportFragmentManager(), mFragments));
-        scrollableLayout.setCurrentScrollableContainer((HeaderScrollHelper.ScrollableContainer) mFragments.get(0));
+        viewPager.setCurrentItem(0);
     }
 
     private void initEvents() {
-        viewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+        ivUser.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onPageSelected(int position) {
-                scrollableLayout.setCurrentScrollableContainer((HeaderScrollHelper.ScrollableContainer) mFragments.get(position));
-            }
-        });
-        scrollableLayout.setOnScrollListener(new HeaderViewPager.OnScrollListener() {
-            @Override
-            public void onScroll(int currentY, int maxY) {
-                float alpha = 1.0f * currentY / maxY;
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MyInfoActivity.class));
             }
         });
     }

@@ -19,6 +19,8 @@ import com.mingquan.gamevip.R;
 public class RoundAngleImageView extends AppCompatImageView {
     private int roundWidth = 13;
     private int roundHeight = 13;
+    private int borderWidth = 2;
+    private int borderColor = Color.parseColor("#FFFFFF");
 
     public RoundAngleImageView(Context context) {
         super(context);
@@ -43,6 +45,9 @@ public class RoundAngleImageView extends AppCompatImageView {
                     R.styleable.RoundAngleImageView_roundWidth, roundWidth);
             roundHeight = a.getDimensionPixelSize(
                     R.styleable.RoundAngleImageView_roundHeight, roundHeight);
+            borderWidth = a.getDimensionPixelSize(
+                    R.styleable.RoundAngleImageView_borderWidth, borderWidth);
+            borderColor = a.getColor(R.styleable.RoundAngleImageView_borderColor, borderColor);
             a.recycle();
         } else {
             float density = context.getResources().getDisplayMetrics().density;
@@ -101,8 +106,8 @@ public class RoundAngleImageView extends AppCompatImageView {
         Paint borderPaint = new Paint();
         borderPaint.setAntiAlias(true);
         borderPaint.setStyle(Paint.Style.STROKE);
-        borderPaint.setColor(Color.parseColor("#FFFFFF"));
-        borderPaint.setStrokeWidth(2);
+        borderPaint.setColor(borderColor);
+        borderPaint.setStrokeWidth(borderWidth);
         Path borderPath = new Path();
         borderPath.addRoundRect(new RectF(0, 0, getWidth(), getHeight()), roundWidth, roundHeight, Path.Direction.CW);
         borderPath.setFillType(Path.FillType.EVEN_ODD);

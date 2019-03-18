@@ -12,16 +12,286 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_marginTop="100dp"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="首页"
-                android:textSize="@dimen/space_21" />
+                android:layout_height="@dimen/space_50"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/space_14"
+                android:paddingRight="@dimen/space_14">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="新游速递"
+                    android:textColor="@color/color_494949"
+                    android:textSize="@dimen/space_14"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_more"
+                    android:gravity="center"
+                    android:text="更多"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/space_12" />
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_new_games"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_150"
+                android:layout_marginBottom="@dimen/space_21" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_12"
+                android:background="@color/color_eeeeee" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/space_50"
+                android:layout_marginLeft="@dimen/space_14"
+                android:gravity="center"
+                android:text="热门游戏"
+                android:textColor="@color/color_494949"
+                android:textSize="@dimen/space_14"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/rl_video_view_1"
+                android:layout_width="347dp"
+                android:layout_height="199dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/icon_01011">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/icon_01018"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5" />
+
+                <VideoView
+                    android:id="@+id/video_view_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/space_5"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/space_20"
+                android:paddingLeft="@dimen/space_14"
+                android:paddingRight="@dimen/space_14"
+                android:paddingTop="@dimen/space_16">
+
+                <ImageView
+                    android:layout_width="@dimen/space_62"
+                    android:layout_height="@dimen/space_62"
+                    android:background="@drawable/icon_01013" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/space_5">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text="魔法师大冒险（国服）"
+                        android:textColor="@color/color_494949"
+                        android:textSize="@dimen/space_14"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text="  中文    44.8MB"
+                        android:textColor="@color/color_494949"
+                        android:textSize="@dimen/space_12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text="去迷宫打怪兽，还可以攒气发..."
+                        android:textColor="@color/color_878787"
+                        android:textSize="@dimen/space_12"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_download"
+                    android:elevation="@dimen/space_1"
+                    android:gravity="center"
+                    android:text="下载"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/space_12" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_video_view_2"
+                android:layout_width="347dp"
+                android:layout_height="199dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/space_20"
+                android:background="@drawable/icon_01011">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/icon_01018"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5" />
+
+                <VideoView
+                    android:id="@+id/video_view_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/space_5"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/space_20"
+                android:paddingLeft="@dimen/space_14"
+                android:paddingRight="@dimen/space_14"
+                android:paddingTop="@dimen/space_16">
+
+                <ImageView
+                    android:layout_width="@dimen/space_62"
+                    android:layout_height="@dimen/space_62"
+                    android:background="@drawable/icon_01013" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/space_5">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text="魔法师大冒险（国服）"
+                        android:textColor="@color/color_494949"
+                        android:textSize="@dimen/space_14"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text="  中文    44.8MB"
+                        android:textColor="@color/color_494949"
+                        android:textSize="@dimen/space_12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text="去迷宫打怪兽，还可以攒气发..."
+                        android:textColor="@color/color_878787"
+                        android:textSize="@dimen/space_12"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_download"
+                    android:elevation="@dimen/space_1"
+                    android:gravity="center"
+                    android:text="下载"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/space_12" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/space_20"
+                android:paddingLeft="@dimen/space_14"
+                android:paddingRight="@dimen/space_14"
+                android:paddingTop="@dimen/space_20">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/space_14"
+                        android:layout_weight="1"
+                        android:background="@drawable/icon_01001" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/icon_01002" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_12"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/space_14"
+                        android:layout_weight="1"
+                        android:background="@drawable/icon_01003" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/icon_01004" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

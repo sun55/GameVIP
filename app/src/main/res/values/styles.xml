@@ -20,6 +20,8 @@
     <declare-styleable name="RoundAngleImageView">
         <attr name="roundWidth" format="dimension" />
         <attr name="roundHeight" format="dimension" />
+        <attr name="borderWidth" format="dimension" />
+        <attr name="borderColor" format="color" />
     </declare-styleable>
 
     <declare-styleable name="RatingBar">
