@@ -29,6 +29,11 @@
             android:name=".activity.MyInfoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreenTheme" />
+        <activity
+            android:windowSoftInputMode="stateAlwaysVisible"
+            android:name=".activity.SearchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenTheme" />
     </application>
 
 </manifest>

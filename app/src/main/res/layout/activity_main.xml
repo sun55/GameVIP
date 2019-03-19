@@ -137,4 +137,43 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/rl_top" />
+
+    <LinearLayout
+        android:id="@+id/ll_manager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="56dp"
+            android:layout_height="56dp">
+
+            <cn.carbs.android.avatarimageview.library.AvatarImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@color/color_d0b078" />
+
+            <cn.carbs.android.avatarimageview.library.AvatarImageView
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_01020"
+                app:aiv_BoarderColor="@color/white"
+                app:aiv_BoarderWidth="@dimen/space_1"
+                app:aiv_ShowBoarder="true" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="-6dp"
+            android:background="@drawable/label_background"
+            android:gravity="center"
+            android:text="专属管家"
+            android:textColor="@color/white"
+            android:textSize="@dimen/space_9" />
+    </LinearLayout>
 </RelativeLayout>

@@ -1,4 +1,5 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,6 +16,24 @@
             android:background="@color/white"
             android:orientation="vertical">
 
+            <!-- banner -->
+            <com.mingquan.gamevip.widget.SlideshowView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginLeft="@dimen/space_14"
+                android:layout_marginRight="@dimen/space_14"
+                android:layout_marginTop="@dimen/space_10"
+                app:bottomLeftRadius="@dimen/space_16"
+                app:bottomRightRadius="@dimen/space_16"
+                app:topLeftRadius="@dimen/space_16"
+                app:topRightRadius="@dimen/space_16" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_12"
+                android:background="@color/color_eeeeee" />
+
+            <!--新游速递-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/space_50"
@@ -33,6 +52,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_more"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/btn_more"
@@ -45,8 +65,9 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_new_games"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/space_150"
-                android:layout_marginBottom="@dimen/space_21" />
+                android:layout_height="160dp"
+                android:layout_marginBottom="@dimen/space_16"
+                android:paddingLeft="@dimen/space_10" />
 
             <View
                 android:layout_width="match_parent"
@@ -142,6 +163,7 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/tv_download_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/btn_download"
@@ -232,6 +254,7 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/tv_download_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/btn_download"
@@ -243,6 +266,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_other"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -294,5 +318,4 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
 </FrameLayout>

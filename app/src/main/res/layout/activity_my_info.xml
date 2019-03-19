@@ -162,6 +162,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/ll_my_consortia"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -189,6 +190,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/ll_my_game"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -210,12 +212,13 @@
                         android:layout_marginBottom="@dimen/space_14"
                         android:layout_marginTop="@dimen/space_8"
                         android:gravity="center"
-                        android:text="我的积分"
+                        android:text="我的游戏"
                         android:textColor="#878787"
                         android:textSize="@dimen/space_12" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/ll_my_friends"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -244,6 +247,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_notification"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/space_50"
                 android:layout_marginTop="@dimen/space_12"
@@ -267,6 +271,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_manager"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/space_50"
                 android:layout_marginTop="@dimen/space_1"
@@ -290,6 +295,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_game_community"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/space_50"
                 android:layout_marginTop="@dimen/space_1"
@@ -313,6 +319,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_my_vip"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/space_50"
                 android:layout_marginTop="@dimen/space_1"
@@ -336,6 +343,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_account_transactions"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/space_50"
                 android:layout_marginTop="@dimen/space_1"
@@ -359,6 +367,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_check_update"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/space_50"
                 android:layout_marginTop="@dimen/space_1"
@@ -382,6 +391,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_contact_customer"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/space_50"
                 android:layout_marginTop="@dimen/space_1"
@@ -405,6 +415,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_setting"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/space_50"
                 android:layout_marginTop="@dimen/space_12"
@@ -419,7 +430,6 @@
                     android:background="@drawable/icon_02009" />
 
                 <TextView
-                    android:layout_marginBottom="@dimen/space_50"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/space_14"
@@ -427,6 +437,10 @@
                     android:textColor="@color/color_494949"
                     android:textSize="@dimen/space_14" />
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_50" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
