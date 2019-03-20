@@ -17,10 +17,7 @@ import butterknife.Unbinder;
 /**
  * 开服
  */
-public class OpenServiceFragment extends BaseFragment implements HeaderScrollHelper.ScrollableContainer {
-
-    @BindView(R.id.scroll_view_open_service)
-    ScrollView scrollViewOpenService;
+public class OpenServiceFragment extends BaseFragment {
     Unbinder unbinder;
 
     @Override
@@ -33,11 +30,6 @@ public class OpenServiceFragment extends BaseFragment implements HeaderScrollHel
 
     public static OpenServiceFragment getInstance() {
         return new OpenServiceFragment();
-    }
-
-    @Override
-    public View getScrollableView() {
-        return scrollViewOpenService;
     }
 
     @Override

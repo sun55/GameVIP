@@ -14,7 +14,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="@dimen/space_137"
-            android:background="@drawable/drawable_home_top" />
+            android:background="@drawable/top_view_bg" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -128,7 +128,7 @@
             app:indicator_width="42dp"
             app:style_bitmap_src="@drawable/icon_01017"
             app:text_color_normal="@color/white"
-            app:text_color_selected="#9e6e33"
+            app:text_color_selected="@color/color_9e6e33"
             app:text_size="@dimen/space_14" />
     </RelativeLayout>
 

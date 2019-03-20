@@ -30,10 +30,17 @@
     <dimen name="space_28">28dp</dimen>
     <dimen name="space_29">29dp</dimen>
     <dimen name="space_30">30dp</dimen>
+    <dimen name="space_34">34dp</dimen>
     <dimen name="space_40">40dp</dimen>
     <dimen name="space_44">44dp</dimen>
     <dimen name="space_50">50dp</dimen>
+    <dimen name="space_60">60dp</dimen>
     <dimen name="space_62">62dp</dimen>
+    <dimen name="space_120">120dp</dimen>
+    <dimen name="space_122">122dp</dimen>
     <dimen name="space_137">137dp</dimen>
     <dimen name="space_150">150dp</dimen>
+    <dimen name="space_170">170dp</dimen>
+    <dimen name="space_172">172dp</dimen>
+    <dimen name="space_347">347dp</dimen>
 </resources>

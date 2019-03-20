@@ -16,8 +16,11 @@ import android.widget.VideoView;
 
 import com.lzy.widget.HeaderScrollHelper;
 import com.mingquan.gamevip.R;
-import com.mingquan.gamevip.adapter.NewGameAdapter;
+import com.mingquan.gamevip.adapter.HomeNewGameAdapter;
+import com.mingquan.gamevip.bean.GameBean;
 import com.vondear.rxtool.view.RxToast;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,8 +45,9 @@ public class HomeFragment extends BaseFragment implements HeaderScrollHelper.Scr
     VideoView videoView2;
     @BindView(R.id.rl_video_view_2)
     RelativeLayout rlVideoView2;
-
     private String uri;
+    private HomeNewGameAdapter homeGameAdapter;
+    private ArrayList<GameBean> newGameList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,6 +62,7 @@ public class HomeFragment extends BaseFragment implements HeaderScrollHelper.Scr
         super.onViewCreated(view, savedInstanceState);
         uri = "android.resource://" + getActivity().getPackageName() + "/" + R.raw.video1;
         initView(view);
+        initData();
         initEvent();
     }
 
@@ -67,7 +72,46 @@ public class HomeFragment extends BaseFragment implements HeaderScrollHelper.Scr
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         manager.setOrientation(LinearLayoutManager.HORIZONTAL);
         rvNewGames.setLayoutManager(manager);
-        rvNewGames.setAdapter(new NewGameAdapter());
+    }
+
+    @Override
+    public void initData() {
+        super.initData();
+        newGameList = new ArrayList<>();
+        homeGameAdapter = new HomeNewGameAdapter(getActivity());
+        GameBean bean = new GameBean();
+        bean.setIconResourceId(R.drawable.icon_03004);
+        bean.setGameName("蒸汽都市");
+        bean.setDetail("角色扮演");
+        bean.setDiscount("4.5折");
+        bean.setTag("『平台独家』超人气英雄集结！");
+        newGameList.add(bean);
+
+        bean = new GameBean();
+        bean.setIconResourceId(R.drawable.icon_03005);
+        bean.setGameName("炎之轨迹");
+        bean.setDetail("卡牌");
+        bean.setDiscount("6.8折");
+        bean.setTag("");
+        newGameList.add(bean);
+
+        bean = new GameBean();
+        bean.setIconResourceId(R.drawable.icon_03006);
+        bean.setGameName("暗黑魔法使");
+        bean.setDetail("模拟 动漫");
+        bean.setDiscount("5.4折");
+        bean.setTag("");
+        newGameList.add(bean);
+
+        bean = new GameBean();
+        bean.setIconResourceId(R.drawable.icon_03007);
+        bean.setGameName("忍者大师");
+        bean.setDetail("动作");
+        bean.setDiscount("6.8折");
+        bean.setTag("");
+        newGameList.add(bean);
+        homeGameAdapter.setList(newGameList);
+        rvNewGames.setAdapter(homeGameAdapter);
     }
 
     private void initEvent() {

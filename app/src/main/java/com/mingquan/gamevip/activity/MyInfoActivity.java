@@ -44,17 +44,18 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
 
     @OnClick({
             R.id.iv_back,
-            R.id.ll_my_consortia,
-            R.id.ll_my_game,
-            R.id.ll_my_friends,
-            R.id.ll_notification,
-            R.id.ll_manager,
-            R.id.ll_game_community,
-            R.id.ll_my_vip,
-            R.id.ll_account_transactions,
-            R.id.ll_check_update,
-            R.id.ll_contact_customer,
-            R.id.ll_setting,
+            R.id.iv_edit,
+            R.id.iv_query,
+            R.id.fl_detail,
+            R.id.fl_recharge,
+            R.id.item_notification,
+            R.id.item_manager,
+            R.id.item_game_community,
+            R.id.item_my_vip,
+            R.id.item_account_transactions,
+            R.id.item_share,
+            R.id.item_contact_customer,
+            R.id.item_setting
     })
     @Override
     public void onClick(View v) {
@@ -62,37 +63,43 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
             case R.id.iv_back: // 返回按钮
                 finish();
                 break;
-            case R.id.ll_my_consortia: // 我的公会
+            case R.id.iv_edit: // 编辑按钮
                 RxToast.showToast("敬请期待");
                 break;
-            case R.id.ll_my_game: // 我的游戏
-
-                break;
-            case R.id.ll_my_friends: // 我的好友
+            case R.id.iv_query: // 问号按钮
                 RxToast.showToast("敬请期待");
                 break;
-            case R.id.ll_notification: // 通知中心
+            case R.id.fl_detail: // 收支明细
                 RxToast.showToast("敬请期待");
                 break;
-            case R.id.ll_manager: // 我的管家
-
-                break;
-            case R.id.ll_game_community: // 游戏社区
+            case R.id.fl_recharge: // 充值
                 RxToast.showToast("敬请期待");
                 break;
-            case R.id.ll_my_vip: // 我的权益
-
-                break;
-            case R.id.ll_account_transactions: // 账号交易
-
-                break;
-            case R.id.ll_check_update: // 检查更新
+            case R.id.item_notification: // 通知中心
                 RxToast.showToast("敬请期待");
                 break;
-            case R.id.ll_contact_customer: // 联系客服
+            case R.id.item_manager: // 我的管家
                 RxToast.showToast("敬请期待");
                 break;
-            case R.id.ll_setting: // 设置
+            case R.id.item_game_community: // 游戏社区
+                RxToast.showToast("敬请期待");
+                break;
+            case R.id.item_my_vip: // 我的权益
+                RxToast.showToast("敬请期待");
+                break;
+            case R.id.item_account_transactions: // 账号交易
+                RxToast.showToast("敬请期待");
+                break;
+            case R.id.item_share: // 推广分享
+                RxToast.showToast("敬请期待");
+                break;
+            case R.id.item_contact_customer: // 联系客服
+                RxToast.showToast("敬请期待");
+                break;
+            case R.id.item_setting: // 设置
+                RxToast.showToast("敬请期待");
+                break;
+            default:
                 RxToast.showToast("敬请期待");
                 break;
         }

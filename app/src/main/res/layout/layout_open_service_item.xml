@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="@dimen/space_170"
+            android:layout_height="@dimen/space_120"
+            android:layout_margin="@dimen/space_2"
+            android:background="@drawable/item_home_game_background"
+            android:elevation="@dimen/space_2">
+
+            <ImageView
+                android:id="@+id/iv_game_icon"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_marginLeft="@dimen/space_6"
+                android:layout_marginRight="@dimen/space_5"
+                android:layout_marginTop="@dimen/space_6"
+                android:background="@drawable/icon_01013" />
+
+            <TextView
+                android:id="@+id/tv_game_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_13"
+                android:layout_toRightOf="@id/iv_game_icon"
+                android:text="名字名字"
+                android:textColor="@color/color_494949"
+                android:textSize="@dimen/space_14"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_game_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_game_name"
+                android:layout_marginTop="@dimen/space_5"
+                android:layout_toRightOf="@id/iv_game_icon"
+                android:text="角色扮演"
+                android:textColor="@color/color_878787"
+                android:textSize="@dimen/space_12" />
+
+            <TextView
+                android:id="@+id/tv_game_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_game_detail"
+                android:layout_marginTop="@dimen/space_5"
+                android:layout_toRightOf="@id/iv_game_icon"
+                android:background="@drawable/icon_03003"
+                android:gravity="center"
+                android:text="4.5折"
+                android:textColor="@color/white"
+                android:textSize="@dimen/space_10" />
+
+            <TextView
+                android:id="@+id/tv_service_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/space_8"
+                android:text="破釜沉舟"
+                android:textColor="@color/color_9e6e33"
+                android:textSize="@dimen/space_14" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

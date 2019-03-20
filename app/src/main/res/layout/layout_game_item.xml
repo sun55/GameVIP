@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_game_root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/space_6"
+            android:layout_marginLeft="@dimen/space_14"
+            android:layout_marginRight="@dimen/space_14"
+            android:layout_marginTop="@dimen/space_6"
+            android:background="@drawable/item_game_bg"
+            android:elevation="@dimen/space_2"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_game_icon"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_marginBottom="@dimen/space_4"
+                android:layout_marginLeft="@dimen/space_4"
+                android:layout_marginRight="@dimen/space_9"
+                android:layout_marginTop="@dimen/space_4"
+                android:background="@drawable/icon_03004" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_game_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1.蒸发都市"
+                        android:textColor="@color/color_494949"
+                        android:textSize="@dimen/space_14"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_game_discount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_3"
+                        android:background="@drawable/icon_03003"
+                        android:gravity="center"
+                        android:text="4.5折"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/space_10" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_game_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:text="角色扮演"
+                    android:textColor="@color/color_878787"
+                    android:textSize="@dimen/space_12" />
+
+                <TextView
+                    android:id="@+id/tv_game_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space_6"
+                    android:layout_marginTop="@dimen/space_30"
+                    android:drawableLeft="@drawable/icon_03001"
+                    android:drawablePadding="@dimen/space_5"
+                    android:text="『平台独家』超人气英雄集结！"
+                    android:textColor="#f9be22"
+                    android:textSize="@dimen/space_12"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space_7"
+                android:src="@drawable/icon_03002" />
+        </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>

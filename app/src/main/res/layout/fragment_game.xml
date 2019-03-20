@@ -1,28 +1,86 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mingquan.gamevip.fragment.HomeFragment">
+    android:orientation="vertical">
 
-    <ScrollView
-        android:id="@+id/scroll_view_game"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="@dimen/space_34"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/space_14"
+        android:paddingRight="@dimen/space_14">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
             <TextView
-                android:layout_marginTop="100dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:id="@+id/tv_label_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/game_indicator_normal"
                 android:gravity="center"
-                android:text="游戏"
-                android:textSize="@dimen/space_21" />
+                android:text="人气最火"
+                android:textColor="@color/color_9e6e33"
+                android:textSize="@dimen/space_13" />
+        </FrameLayout>
 
-        </LinearLayout>
-    </ScrollView>
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
-</FrameLayout>
+            <TextView
+                android:id="@+id/tv_label_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/game_indicator_normal"
+                android:gravity="center"
+                android:text="上升最快"
+                android:textColor="@color/color_9e6e33"
+                android:textSize="@dimen/space_13" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_label_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/game_indicator_normal"
+                android:gravity="center"
+                android:text="预约最多"
+                android:textColor="@color/color_9e6e33"
+                android:textSize="@dimen/space_13" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_label_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/game_indicator_normal"
+                android:gravity="center"
+                android:text="最新上架"
+                android:textColor="@color/color_9e6e33"
+                android:textSize="@dimen/space_13" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcv_game_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

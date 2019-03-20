@@ -1,28 +1,93 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.mingquan.gamevip.fragment.HomeFragment">
+    android:layout_height="match_parent">
 
-    <ScrollView
-        android:id="@+id/scroll_view_open_service"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="@dimen/space_60"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/space_5"
+            android:layout_marginLeft="@dimen/space_14"
+            android:layout_marginTop="@dimen/space_5"
+            android:background="@drawable/game_indicator_selected"
+            android:gravity="center"
+            android:text="13:00"
+            android:textColor="@color/white"
+            android:textSize="@dimen/space_14" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginLeft="@dimen/space_14"
+            android:layout_marginRight="@dimen/space_14"
+            android:orientation="horizontal">
 
-            <TextView
-                android:layout_marginTop="100dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="开服"
-                android:textSize="@dimen/space_21" />
+            <com.mingquan.gamevip.widget.XOpenServiceItem
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_122"
+                android:layout_weight="1"
+                app:game_detail="角色扮演"
+                app:game_discount="4.5折"
+                app:game_icon="@drawable/icon_03004"
+                app:game_name="蒸汽都市"
+                app:service_name="破釜沉舟" />
 
+            <com.mingquan.gamevip.widget.XOpenServiceItem
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_122"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_weight="1"
+                app:game_detail="卡牌"
+                app:game_discount="6.8折"
+                app:game_icon="@drawable/icon_03005"
+                app:game_name="炎之轨迹"
+                app:service_name="28服 仁义之师" />
         </LinearLayout>
-    </ScrollView>
 
+        <TextView
+            android:layout_width="@dimen/space_60"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/space_5"
+            android:layout_marginLeft="@dimen/space_14"
+            android:layout_marginTop="@dimen/space_5"
+            android:background="@drawable/game_indicator_selected"
+            android:gravity="center"
+            android:text="14:00"
+            android:textColor="@color/white"
+            android:textSize="@dimen/space_14" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_14"
+            android:layout_marginRight="@dimen/space_14"
+            android:orientation="horizontal">
+
+            <com.mingquan.gamevip.widget.XOpenServiceItem
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_122"
+                android:layout_weight="1"
+                app:game_detail="模拟 动漫"
+                app:game_discount="5.4折"
+                app:game_icon="@drawable/icon_03006"
+                app:game_name="暗黑魔法使"
+                app:service_name="绿叶隧道" />
+
+            <com.mingquan.gamevip.widget.XOpenServiceItem
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_122"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_weight="1"
+                app:game_detail="动作"
+                app:game_discount="6.8折"
+                app:game_icon="@drawable/icon_03007"
+                app:game_name="忍者大师"
+                app:service_name="6147服" />
+        </LinearLayout>
+    </LinearLayout>
 </FrameLayout>
