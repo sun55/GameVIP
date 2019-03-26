@@ -66,7 +66,7 @@ public class GameFragment extends BaseFragment {
     @Override
     public void initData() {
         super.initData();
-        gameList = new ArrayList<GameBean>();
+        gameList = new ArrayList<>();
         adapter = new GameAdapter(getActivity());
         GameBean bean = new GameBean();
         bean.setIconResourceId(R.drawable.icon_03004);

@@ -1,5 +1,6 @@
 package com.mingquan.gamevip.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -70,7 +71,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
                 RxToast.showToast("敬请期待");
                 break;
             case R.id.fl_detail: // 收支明细
-                RxToast.showToast("敬请期待");
+                startActivity(new Intent(this, InOutDetailActivity.class));
                 break;
             case R.id.fl_recharge: // 充值
                 RxToast.showToast("敬请期待");

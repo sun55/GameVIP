@@ -16,6 +16,7 @@ import android.view.WindowManager;
 
 public class BaseActivity extends AppCompatActivity {
     private View mDecorView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,20 +37,20 @@ public class BaseActivity extends AppCompatActivity {
 
         //需要设置这个 flag 才能调用 setStatusBarColor 来设置状态栏颜色
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-
-        ViewGroup mContentView = (ViewGroup) findViewById(Window.ID_ANDROID_CONTENT);
+        ViewGroup mContentView = findViewById(Window.ID_ANDROID_CONTENT);
         View mChildView = mContentView.getChildAt(0);
         if (mChildView != null) {
             //注意不是设置 ContentView 的 FitsSystemWindows, 而是设置 ContentView 的第一个子 View . 使其不为系统 View 预留空间.
             ViewCompat.setFitsSystemWindows(mChildView, false);
         }
     }
+
     // 4.4 - 5.0版本
     private void setStatusBarUpperAPI19() {
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
-        ViewGroup mContentView = (ViewGroup) findViewById(Window.ID_ANDROID_CONTENT);
+        ViewGroup mContentView = findViewById(Window.ID_ANDROID_CONTENT);
         View statusBarView = mContentView.getChildAt(0);
         //移除假的 View
         if (statusBarView != null && statusBarView.getLayoutParams() != null &&
@@ -61,14 +62,16 @@ public class BaseActivity extends AppCompatActivity {
             ViewCompat.setFitsSystemWindows(mContentView.getChildAt(0), false);
         }
     }
-    private int getStatusBarHeight(){
+
+    private int getStatusBarHeight() {
         int result = 0;
-        int resId = getResources().getIdentifier("status_bar_height","dimen","android");
-        if(resId>0){
+        int resId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resId > 0) {
             result = getResources().getDimensionPixelSize(resId);
         }
         return result;
     }
+
     /**
      * 用于控制NavigationBar的隐藏和显示
      */
@@ -82,9 +85,9 @@ public class BaseActivity extends AppCompatActivity {
 
     private void hideSystemUI() {
         mDecorView.setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR |
-                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
+                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        );
     }
 }

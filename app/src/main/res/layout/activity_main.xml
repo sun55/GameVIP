@@ -156,10 +156,11 @@
                 android:src="@color/color_d0b078" />
 
             <cn.carbs.android.avatarimageview.library.AvatarImageView
+                android:id="@+id/manager_avatar"
                 android:layout_width="54dp"
                 android:layout_height="54dp"
                 android:layout_centerInParent="true"
-                android:src="@drawable/icon_01020"
+                android:src="@drawable/icon_avatar_004"
                 app:aiv_BoarderColor="@color/white"
                 app:aiv_BoarderWidth="@dimen/space_1"
                 app:aiv_ShowBoarder="true" />

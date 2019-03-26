@@ -1,5 +1,6 @@
 package com.mingquan.gamevip.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -18,6 +19,7 @@ import com.mingquan.gamevip.fragment.MessageFragment;
 import com.mingquan.gamevip.fragment.OpenServiceFragment;
 import com.mingquan.gamevip.fragment.SocietyFragment;
 import com.mingquan.gamevip.utils.TDevice;
+import com.mingquan.gamevip.utils.TLog;
 import com.mingquan.gamevip.widget.MyRatingBar;
 import com.mingquan.gamevip.widget.RoundAngleImageView;
 import com.mingquan.gamevip.widget.StatusTextView;
@@ -33,7 +35,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener, View.OnTouchListener {
 
     @BindView(R.id.avatar)
     RoundAngleImageView avatar;
@@ -102,39 +104,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void initEvents() {
-        llManager.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                int action = event.getAction();
-                switch (action) {
-                    case MotionEvent.ACTION_DOWN:
-                        int last_X = (int) event.getRawX();
-                        int last_Y = (int) event.getRawY();
-                        mTouchPointMap.put(v, new int[]{last_X, last_Y});
-                        break;
-                    case MotionEvent.ACTION_MOVE:
-                        int[] lastPoint = mTouchPointMap.get(v);
-                        if (lastPoint != null) {
-                            int dx = (int) event.getRawX() - lastPoint[0];
-                            int dy = (int) event.getRawY() - lastPoint[1];
-
-                            int left = (int) v.getX() + dx;
-                            int top = (int) v.getY() + dy;
-                            v.setX(left);
-                            v.setY(top);
-                            lastPoint[0] = (int) event.getRawX();
-                            lastPoint[1] = (int) event.getRawY();
-
-                            mTouchPointMap.put(v, lastPoint);
-                            v.getParent().requestLayout();
-                        }
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        break;
-                }
-                return true;
-            }
-        });
+        llManager.setOnTouchListener(this);
     }
 
     @OnClick({R.id.iv_search, R.id.iv_game, R.id.iv_user})
@@ -153,4 +123,42 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         }
     }
 
+    int down_x = 0;
+    int down_y = 0;
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        int action = event.getAction();
+        switch (action) {
+            case MotionEvent.ACTION_DOWN:
+                down_x = (int) event.getRawX();
+                down_y = (int) event.getRawY();
+                TLog.info("down %s, %s", down_x, down_y);
+                mTouchPointMap.put(v, new int[]{down_x, down_y});
+                break;
+            case MotionEvent.ACTION_MOVE:
+                int[] lastPoint = mTouchPointMap.get(v);
+                if (lastPoint != null) {
+                    int dx = (int) event.getRawX() - lastPoint[0];
+                    int dy = (int) event.getRawY() - lastPoint[1];
+
+                    int left = (int) v.getX() + dx;
+                    int top = (int) v.getY() + dy;
+                    v.setX(left);
+                    v.setY(top);
+                    lastPoint[0] = (int) event.getRawX();
+                    lastPoint[1] = (int) event.getRawY();
+
+                    mTouchPointMap.put(v, lastPoint);
+                    v.getParent().requestLayout();
+                }
+                break;
+            case MotionEvent.ACTION_UP:
+                TLog.info("up %s, %s", event.getRawX(), event.getRawY());
+                if (Math.abs(event.getRawX() - down_x) < 50 && Math.abs(event.getRawY() - down_y) < 50) {
+                    RxToast.showToast("敬请期待");
+                }
+                break;
+        }
+        return true;
+    }
 }

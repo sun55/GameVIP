@@ -147,7 +147,7 @@
                         android:ellipsize="end"
                         android:gravity="center"
                         android:text="  中文    44.8MB"
-                        android:textColor="@color/color_494949"
+                        android:textColor="@color/color_44aeff"
                         android:textSize="@dimen/space_12" />
 
                     <TextView
@@ -158,8 +158,7 @@
                         android:gravity="center"
                         android:text="去迷宫打怪兽，还可以攒气发..."
                         android:textColor="@color/color_878787"
-                        android:textSize="@dimen/space_12"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/space_12" />
                 </LinearLayout>
 
                 <TextView
@@ -238,7 +237,7 @@
                         android:ellipsize="end"
                         android:gravity="center"
                         android:text="  中文    44.8MB"
-                        android:textColor="@color/color_494949"
+                        android:textColor="@color/color_44aeff"
                         android:textSize="@dimen/space_12" />
 
                     <TextView
@@ -249,8 +248,7 @@
                         android:gravity="center"
                         android:text="去迷宫打怪兽，还可以攒气发..."
                         android:textColor="@color/color_878787"
-                        android:textSize="@dimen/space_12"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/space_12" />
                 </LinearLayout>
 
                 <TextView
