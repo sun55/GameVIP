@@ -46,7 +46,7 @@
         android:layout_below="@id/rl_top"
         android:background="@color/color_eeeeee" />
 
-    <com.mingquan.gamevip.widget.MyScrollview
+    <com.mingquan.gamevip.widget.MyScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/space_88"
@@ -136,5 +136,5 @@
                     android:layout_height="wrap_content" />
             </RelativeLayout>
         </LinearLayout>
-    </com.mingquan.gamevip.widget.MyScrollview>
+    </com.mingquan.gamevip.widget.MyScrollView>
 </RelativeLayout>

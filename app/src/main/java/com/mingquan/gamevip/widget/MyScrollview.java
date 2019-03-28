@@ -10,22 +10,22 @@ import android.widget.ScrollView;
  * 让RecyclerView在ScrollView中惯性滑动
  */
 
-public class MyScrollview extends ScrollView {
+public class MyScrollView extends ScrollView {
     private int downX;
     private int downY;
     private int mTouchSlop;
 
-    public MyScrollview(Context context) {
+    public MyScrollView(Context context) {
         super(context);
         mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
     }
 
-    public MyScrollview(Context context, AttributeSet attrs) {
+    public MyScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
     }
 
-    public MyScrollview(Context context, AttributeSet attrs, int defStyleAttr) {
+    public MyScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
     }
