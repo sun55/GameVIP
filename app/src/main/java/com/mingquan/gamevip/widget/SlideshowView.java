@@ -23,6 +23,7 @@ import android.widget.LinearLayout;
 
 import com.mingquan.gamevip.R;
 import com.mingquan.gamevip.utils.TDevice;
+import com.mingquan.gamevip.utils.TLog;
 import com.vondear.rxtool.view.RxToast;
 
 import java.util.ArrayList;
@@ -162,7 +163,7 @@ public class SlideshowView extends FrameLayout {
     @Override
     protected void dispatchDraw(Canvas canvas) {
         int width = getWidth();
-        int height = (int) (getHeight());
+        int height = getHeight();
         Path path = new Path();
         path.moveTo(0, topLeftRadius);
         path.arcTo(new RectF(0, 0, topLeftRadius * 2, topLeftRadius * 2), -180, 90);
@@ -195,7 +196,7 @@ public class SlideshowView extends FrameLayout {
             imageViewsList.clear();
         }
         // 热点个数与图片特殊相等
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             ImageView view = new ImageView(context);
             view.setScaleType(ScaleType.CENTER_CROP);
             imageViewsList.add(view);
@@ -226,7 +227,27 @@ public class SlideshowView extends FrameLayout {
         @Override
         public Object instantiateItem(View container, final int position) {
             ImageView imageView = imageViewsList.get(position);
-            imageView.setBackgroundResource(R.drawable.icon_01012);
+            TLog.info("banner position:%s", position);
+            switch (position) {
+                case 0:
+                    imageView.setBackgroundResource(R.drawable.icon_01021);
+                    break;
+                case 1:
+                    imageView.setBackgroundResource(R.drawable.icon_01022);
+                    break;
+                case 2:
+                    imageView.setBackgroundResource(R.drawable.icon_01023);
+                    break;
+                case 3:
+                    imageView.setBackgroundResource(R.drawable.icon_01024);
+                    break;
+                case 4:
+                    imageView.setBackgroundResource(R.drawable.icon_01025);
+                    break;
+                default:
+                    imageView.setBackgroundResource(R.drawable.icon_01021);
+                    break;
+            }
             imageView.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -93,24 +93,23 @@ public class RoundAngleImageView extends AppCompatImageView {
     }
 
     private void drawRoundAngle(Canvas canvas) {
-        Paint maskPaint = new Paint();
+        /*Paint maskPaint = new Paint();
         maskPaint.setAntiAlias(true);
         maskPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         Path maskPath = new Path();
         maskPath.addRoundRect(new RectF(0.0F, 0.0F, getWidth(), getHeight()), roundWidth, roundHeight, Path.Direction.CW);
-
-        //这是设置了填充模式，非常关键
         maskPath.setFillType(Path.FillType.INVERSE_WINDING);
-        canvas.drawPath(maskPath, maskPaint);
+        canvas.drawPath(maskPath, maskPaint);*/
 
         Paint borderPaint = new Paint();
         borderPaint.setAntiAlias(true);
+        borderPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
         borderPaint.setStyle(Paint.Style.STROKE);
         borderPaint.setColor(borderColor);
         borderPaint.setStrokeWidth(borderWidth);
         Path borderPath = new Path();
         borderPath.addRoundRect(new RectF(0, 0, getWidth(), getHeight()), roundWidth, roundHeight, Path.Direction.CW);
-        borderPath.setFillType(Path.FillType.EVEN_ODD);
+//        borderPath.setFillType(Path.FillType.EVEN_ODD);
         canvas.drawPath(borderPath, borderPaint);
     }
 }

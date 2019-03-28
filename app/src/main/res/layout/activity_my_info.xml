@@ -27,6 +27,7 @@
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
                 android:paddingLeft="@dimen/space_14"
+                android:paddingRight="@dimen/space_14"
                 android:src="@drawable/icon_02014" />
 
             <TextView

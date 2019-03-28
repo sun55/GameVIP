@@ -21,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mingquan.gamevip.R;
+import com.mingquan.gamevip.utils.TDevice;
 import com.mingquan.gamevip.utils.TLog;
 
 import java.util.ArrayList;
@@ -246,7 +247,7 @@ public class XIndicator extends LinearLayout {
         canvas.save();
         switch (mIndicatorStyle) {
             case STYLE_BITMAP:
-                canvas.translate(mTranslationX, 0);
+                canvas.translate(mTranslationX, TDevice.dpToPixel(4.5f));
                 canvas.drawBitmap(mBitmap, null, mRectF, mPaint);
                 break;
             case STYLE_LINE:

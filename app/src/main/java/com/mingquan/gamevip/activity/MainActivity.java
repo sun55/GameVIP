@@ -1,6 +1,5 @@
 package com.mingquan.gamevip.activity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,7 +14,7 @@ import com.mingquan.gamevip.R;
 import com.mingquan.gamevip.adapter.FragmentViewPagerAdapter;
 import com.mingquan.gamevip.fragment.GameFragment;
 import com.mingquan.gamevip.fragment.HomeFragment;
-import com.mingquan.gamevip.fragment.MessageFragment;
+import com.mingquan.gamevip.fragment.CommunityFragment;
 import com.mingquan.gamevip.fragment.OpenServiceFragment;
 import com.mingquan.gamevip.fragment.SocietyFragment;
 import com.mingquan.gamevip.utils.TDevice;
@@ -66,7 +65,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private GameFragment gameFragment;
     private OpenServiceFragment openServiceFragment;
     private SocietyFragment societyFragment;
-    private MessageFragment messageFragment;
+    private CommunityFragment messageFragment;
     private HashMap<View, int[]> mTouchPointMap = new HashMap<>();
 
     @Override
@@ -74,12 +73,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        ratingBar.setStar(5);
         initView();
         initEvents();
     }
 
     private void initView() {
+        ratingBar.setStar(5);
         String[] tabTitles = getResources().getStringArray(R.array.tab_titles);
         indicator.setTitleList(Arrays.asList(tabTitles));
         indicator.setViewPager(viewPager, 0);
@@ -89,7 +88,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         gameFragment = GameFragment.getInstance();
         openServiceFragment = OpenServiceFragment.getInstance();
         societyFragment = SocietyFragment.getInstance();
-        messageFragment = MessageFragment.getInstance();
+        messageFragment = CommunityFragment.getInstance();
         if (mFragments == null) {
             mFragments = new ArrayList<>();
             mFragments.add(homeFragment);
@@ -115,7 +114,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 startActivity(new Intent(MainActivity.this, SearchActivity.class));
                 break;
             case R.id.iv_game:
-                RxToast.showToast("敬请期待");
+                startActivity(new Intent(MainActivity.this, MyGameActivity.class));
                 break;
             case R.id.iv_user:
                 startActivity(new Intent(MainActivity.this, MyInfoActivity.class));
@@ -125,6 +124,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     int down_x = 0;
     int down_y = 0;
+
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         int action = event.getAction();
@@ -155,7 +155,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             case MotionEvent.ACTION_UP:
                 TLog.info("up %s, %s", event.getRawX(), event.getRawY());
                 if (Math.abs(event.getRawX() - down_x) < 50 && Math.abs(event.getRawY() - down_y) < 50) {
-                    RxToast.showToast("敬请期待");
+                    startActivity(new Intent(MainActivity.this, GameManagerActivity.class));
                 }
                 break;
         }

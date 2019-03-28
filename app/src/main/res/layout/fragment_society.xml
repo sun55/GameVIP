@@ -1,26 +1,73 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <ScrollView
-        android:id="@+id/scroll_view_society"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_12"
+        android:background="@drawable/society_indicator_bg"
+        android:orientation="horizontal"
+        android:padding="@dimen/space_1">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/rl_indicator_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_indicator_1"
+                android:layout_width="91dp"
+                android:layout_height="@dimen/space_21"
+                android:background="@drawable/society_indicator_nomal"
+                android:visibility="gone" />
 
             <TextView
-                android:layout_marginTop="100dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:id="@+id/tv_indicator_1"
+                android:layout_width="91dp"
+                android:layout_height="@dimen/space_21"
                 android:gravity="center"
-                android:text="公会"
-                android:textSize="@dimen/space_21" />
+                android:text="公会战力榜"
+                android:textColor="@color/white"
+                android:textSize="@dimen/space_12" />
+        </RelativeLayout>
 
-        </LinearLayout>
-    </ScrollView>
+        <RelativeLayout
+            android:id="@+id/rl_indicator_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-</FrameLayout>
+            <ImageView
+                android:id="@+id/iv_indicator_2"
+                android:layout_width="91dp"
+                android:layout_height="@dimen/space_21"
+                android:background="@drawable/society_indicator_nomal"
+                android:scaleX="-1" />
+
+            <TextView
+                android:id="@+id/tv_indicator_2"
+                android:layout_width="91dp"
+                android:layout_height="@dimen/space_21"
+                android:gravity="center"
+                android:text="公会活跃榜"
+                android:textColor="@color/color_cfae76"
+                android:textSize="@dimen/space_12" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_8"
+        android:layout_marginTop="@dimen/space_8"
+        android:gravity="center"
+        android:text="榜单更新时间：每日20：00"
+        android:textSize="@dimen/space_10" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcv_society_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

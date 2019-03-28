@@ -80,7 +80,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
                 RxToast.showToast("敬请期待");
                 break;
             case R.id.item_manager: // 我的管家
-                RxToast.showToast("敬请期待");
+                startActivity(new Intent(MyInfoActivity.this, GameManagerActivity.class));
                 break;
             case R.id.item_game_community: // 游戏社区
                 RxToast.showToast("敬请期待");

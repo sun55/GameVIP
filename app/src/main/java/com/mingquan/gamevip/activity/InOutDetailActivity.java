@@ -56,13 +56,13 @@ public class InOutDetailActivity extends BaseActivity implements View.OnClickLis
             R.drawable.icon_04_001,
             R.drawable.icon_04_002};
     private int[] orderGame = {
+            R.drawable.icon_04_001,
+            R.drawable.icon_04_005,
+            R.drawable.icon_04_006,
             R.drawable.icon_04_004,
             R.drawable.icon_04_007,
             R.drawable.icon_04_002,
-            R.drawable.icon_04_003,
-            R.drawable.icon_04_001,
-            R.drawable.icon_04_005,
-            R.drawable.icon_04_006};
+            R.drawable.icon_04_003};
     private int[] orderUser = {
             R.drawable.icon_04_002,
             R.drawable.icon_04_001,
