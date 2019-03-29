@@ -57,7 +57,8 @@
                     app:clickable="false"
                     app:starCount="5"
                     app:starFill="@drawable/icon_01008"
-                    app:starImageSize="@dimen/space_15" />
+                    app:starImageSize="@dimen/space_15"
+                    app:starPadding="0.5dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -104,16 +105,16 @@
                     android:id="@+id/iv_game"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:paddingRight="@dimen/space_10"
                     android:paddingLeft="@dimen/space_10"
+                    android:paddingRight="@dimen/space_10"
                     android:src="@drawable/icon_01007" />
 
                 <ImageView
-                    android:paddingRight="@dimen/space_14"
-                    android:paddingLeft="@dimen/space_10"
                     android:id="@+id/iv_user"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/space_10"
+                    android:paddingRight="@dimen/space_14"
                     android:src="@drawable/icon_01010" />
             </LinearLayout>
         </RelativeLayout>
@@ -129,6 +130,7 @@
             app:indicator_style="bitmap"
             app:indicator_visible_count="5"
             app:indicator_width="42dp"
+            app:padding_bottom_top="4.5dp"
             app:style_bitmap_src="@drawable/icon_01017"
             app:text_color_normal="@color/white"
             app:text_color_selected="@color/color_9e6e33"
@@ -145,8 +147,8 @@
         android:id="@+id/ll_manager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
         android:orientation="vertical">
 
         <RelativeLayout

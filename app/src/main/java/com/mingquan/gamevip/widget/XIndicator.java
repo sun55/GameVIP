@@ -144,6 +144,7 @@ public class XIndicator extends LinearLayout {
      * 线性指示器左右padding，默认根据数量均分屏幕
      */
     private int mStyleLinePadding = 0;
+    private int mPaddingBottomTop = 0;
 
     public XIndicator(Context context) {
         this(context, null);
@@ -161,6 +162,7 @@ public class XIndicator extends LinearLayout {
         mIndicatorColor = a.getColor(R.styleable.XIndicator_indicator_color, D_INDICATOR_COLOR);
         mIndicatorStyle = a.getInt(R.styleable.XIndicator_indicator_style, STYLE_LINE);
         mStyleLinePadding = a.getDimensionPixelSize(R.styleable.XIndicator_style_line_padding, 0);
+        mPaddingBottomTop = a.getDimensionPixelSize(R.styleable.XIndicator_padding_bottom_top, 0);
         mIndicatorHeight = a.getDimensionPixelSize(R.styleable.XIndicator_indicator_height, -1);
         mIndicatorWidth = a.getDimensionPixelSize(R.styleable.XIndicator_indicator_width, -1);
         Drawable drawable = a.getDrawable(R.styleable.XIndicator_style_bitmap_src);
@@ -247,7 +249,7 @@ public class XIndicator extends LinearLayout {
         canvas.save();
         switch (mIndicatorStyle) {
             case STYLE_BITMAP:
-                canvas.translate(mTranslationX, TDevice.dpToPixel(4.5f));
+                canvas.translate(mTranslationX, mPaddingBottomTop);
                 canvas.drawBitmap(mBitmap, null, mRectF, mPaint);
                 break;
             case STYLE_LINE:

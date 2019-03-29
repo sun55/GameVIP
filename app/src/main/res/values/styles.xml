@@ -32,6 +32,7 @@
         <attr name="halfFill" format="reference" />
         <attr name="clickable" format="boolean" />
         <attr name="marginRightSize" format="dimension" />
+        <attr name="starPadding" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="XIndicator">
@@ -47,6 +48,7 @@
         </attr>
         <attr name="style_bitmap_src" format="reference" />
         <attr name="style_line_padding" format="dimension" />
+        <attr name="padding_bottom_top" format="dimension" />
         <attr name="indicator_height" format="dimension" />
         <attr name="indicator_width" format="dimension" />
     </declare-styleable>

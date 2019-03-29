@@ -24,6 +24,7 @@ public class MyRatingBar extends LinearLayout {
     private Drawable starFillDrawable;
     private Drawable halfFillDrawable;
     private float marginRightSize;
+    private float mStarPadding;
 
     public void setOnRatingChangeListener(OnRatingChangeListener onRatingChangeListener) {
         this.onRatingChangeListener = onRatingChangeListener;
@@ -61,6 +62,7 @@ public class MyRatingBar extends LinearLayout {
         this.halfFillDrawable = mTypedArray.getDrawable(R.styleable.RatingBar_halfFill);
         this.mClickable = mTypedArray.getBoolean(R.styleable.RatingBar_clickable, false);
         this.marginRightSize = mTypedArray.getDimension(R.styleable.RatingBar_marginRightSize, 1f);
+        this.mStarPadding = mTypedArray.getDimension(R.styleable.RatingBar_starPadding, 1f);
 
         mTypedArray.recycle();
 
@@ -88,10 +90,8 @@ public class MyRatingBar extends LinearLayout {
     //初始化单个星星控件
     private ImageView getStarImageView(Context context, AttributeSet attrs) {
         ImageView imageView = new ImageView(context);
-        imageView.setPadding((int) TDevice.dpToPixel(0.5f), 0, (int) TDevice.dpToPixel(0.5f), 0);
+        imageView.setPadding((int) mStarPadding, 0, (int) mStarPadding, 0);
         imageView.setImageDrawable(this.starEmptyDrawable);
-        imageView.setMaxWidth(10);
-        imageView.setMaxHeight(10);
         return imageView;
     }
 
